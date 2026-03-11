@@ -1,0 +1,11 @@
+{
+  "test_engine": 52,
+  "total_cycles": 213,
+  "calibration": 60,
+  "prediction_points": 153,
+  "train_engines": 87,
+  "val_engines": 12,
+  "train_samples": 17906,
+  "val_samples": 2512,
+  "n_experiments": 100
+}

@@ -1,0 +1,54 @@
+{
+  "per_phase": {
+    "early": {
+      "best_model": "Transformer",
+      "oracle_mae": 5.519962897207221,
+      "meta_mae": 2.887660590203403,
+      "gap_cycles": -2.632302307003818,
+      "gap_pct": -91.15691490662351,
+      "all_model_maes": {
+        "RF": 12.2014108184029,
+        "XGB": 7.790461868585324,
+        "SVR": 9.558026248109966,
+        "LSTM": 8.91751006780886,
+        "CNN": 8.194806977814318,
+        "Transformer": 5.519962897207221
+      }
+    },
+    "mid": {
+      "best_model": "Transformer",
+      "oracle_mae": 2.984505637673771,
+      "meta_mae": 4.077906029794221,
+      "gap_cycles": 1.0934003921204498,
+      "gap_pct": 26.812790293150158,
+      "all_model_maes": {
+        "RF": 3.141858768473646,
+        "XGB": 7.234241824430578,
+        "SVR": 3.350299518515909,
+        "LSTM": 6.032649063409544,
+        "CNN": 10.538418401830338,
+        "Transformer": 2.984505637673771
+      }
+    },
+    "late": {
+      "best_model": "RF",
+      "oracle_mae": 1.3109618783648214,
+      "meta_mae": 2.607575174178947,
+      "gap_cycles": 1.2966132958141257,
+      "gap_pct": 49.724867327071145,
+      "all_model_maes": {
+        "RF": 1.3109618783648214,
+        "XGB": 14.242956844965617,
+        "SVR": 2.8289593832725064,
+        "LSTM": 4.898679615563037,
+        "CNN": 6.644392492613372,
+        "Transformer": 3.036111658899224
+      }
+    }
+  },
+  "oracle_combined_mae": 3.2718101377486044,
+  "meta_combined_mae": 3.191047264725524,
+  "total_gap_cycles": -0.0807628730230805,
+  "total_gap_pct": -2.5309206139266403,
+  "note": "Oracle = best single model per phase averaged across 100 experiments. Post-hoc only \u2014 phase labels unavailable at inference time."
+}

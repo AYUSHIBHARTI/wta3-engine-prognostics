@@ -1,0 +1,83 @@
+{
+  "conditions": [
+    {
+      "name": "Simple Average",
+      "description": "Equal weights, no MAD filter",
+      "metrics": {
+        "rmse": 3.5242468044419297,
+        "mae": 3.0009604790637714,
+        "r2": 0.9936327842419929,
+        "nasa": 49.832958639342436,
+        "within_10": 100.0
+      },
+      "per_exp_rmse_std": 0.8764854412413303,
+      "per_exp_rmse_p90": 5.358096105795844,
+      "per_exp_rmse_worst": 6.881483157031837
+    },
+    {
+      "name": "WTA\u00b3 No MAD",
+      "description": "\u03b2=\u22123 weights, MAD filter disabled",
+      "metrics": {
+        "rmse": 3.168160102203452,
+        "mae": 2.5768215259844656,
+        "r2": 0.9948544573992513,
+        "nasa": 44.452657184509505,
+        "within_10": 100.0
+      },
+      "per_exp_rmse_std": 1.8115144947537458,
+      "per_exp_rmse_p90": 6.259233066105209,
+      "per_exp_rmse_worst": 11.751425441226829
+    },
+    {
+      "name": "Single Best Model",
+      "description": "Winner-takes-all per experiment",
+      "metrics": {
+        "rmse": 3.1982060293225594,
+        "mae": 2.144918305805695,
+        "r2": 0.9947563968868788,
+        "nasa": 40.41923257329533,
+        "within_10": 96.07843137254902
+      },
+      "per_exp_rmse_std": 2.710531896714571,
+      "per_exp_rmse_p90": 7.953697017130091,
+      "per_exp_rmse_worst": 15.043923681050051
+    },
+    {
+      "name": "WTA\u00b3 ML-Only",
+      "description": "RF+XGB+SVR only, \u03b2=\u22123, MAD=2.5",
+      "metrics": {
+        "rmse": 6.321416194548983,
+        "mae": 4.806722501852719,
+        "r2": 0.9795145406503557,
+        "nasa": 86.8864784049286,
+        "within_10": 85.62091503267973
+      },
+      "per_exp_rmse_std": 1.0949511669786127,
+      "per_exp_rmse_p90": 8.152883036129724,
+      "per_exp_rmse_worst": 9.07613527342434
+    },
+    {
+      "name": "WTA\u00b3 Full",
+      "description": "All 6 models, \u03b2=\u22123, MAD=2.5 (proposed)",
+      "metrics": {
+        "rmse": 3.7301695866694553,
+        "mae": 3.191047264725524,
+        "r2": 0.9928669693376724,
+        "nasa": 55.254559202803435,
+        "within_10": 100.0
+      },
+      "per_exp_rmse_std": 1.2765953232466822,
+      "per_exp_rmse_p90": 6.387617304803215,
+      "per_exp_rmse_worst": 9.542336701345302
+    }
+  ],
+  "best_model_counts": {
+    "RF": 0,
+    "XGB": 0,
+    "SVR": 0,
+    "LSTM": 1,
+    "CNN": 1,
+    "Transformer": 98
+  },
+  "note": "Condition E (WTA\u00b3 Full) is the proposed method. All conditions evaluated on Engine #52, cycles 61\u2013213. Meta-prediction = mean of 100 experiment ensemble predictions. Std/P90/Worst are across 100 per-experiment RMSE values \u2014 lower = more robust across hyperparameter configurations."
+}

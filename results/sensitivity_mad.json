@@ -1,0 +1,110 @@
+[
+  {
+    "threshold": 1.5,
+    "rmse": 4.358942286870926,
+    "mae": 3.6565401984132664,
+    "r2": 0.9902595465514671,
+    "transformer_excl": 91,
+    "xgb_excl": 22,
+    "zero_model_configs": 0,
+    "all_model_excl": {
+      "RF": 0,
+      "XGB": 22,
+      "SVR": 0,
+      "LSTM": 15,
+      "CNN": 8,
+      "Transformer": 91
+    },
+    "selected": false
+  },
+  {
+    "threshold": 2.0,
+    "rmse": 4.049738141389603,
+    "mae": 3.434098852214942,
+    "r2": 0.9915924236087701,
+    "transformer_excl": 71,
+    "xgb_excl": 17,
+    "zero_model_configs": 0,
+    "all_model_excl": {
+      "RF": 0,
+      "XGB": 17,
+      "SVR": 0,
+      "LSTM": 9,
+      "CNN": 2,
+      "Transformer": 71
+    },
+    "selected": false
+  },
+  {
+    "threshold": 2.5,
+    "rmse": 3.7301695866694553,
+    "mae": 3.191047264725524,
+    "r2": 0.9928669693376724,
+    "transformer_excl": 47,
+    "xgb_excl": 6,
+    "zero_model_configs": 0,
+    "all_model_excl": {
+      "RF": 0,
+      "XGB": 6,
+      "SVR": 0,
+      "LSTM": 2,
+      "CNN": 0,
+      "Transformer": 47
+    },
+    "selected": true
+  },
+  {
+    "threshold": 3.0,
+    "rmse": 3.453912969639072,
+    "mae": 2.9601638267422543,
+    "r2": 0.9938843909081472,
+    "transformer_excl": 29,
+    "xgb_excl": 0,
+    "zero_model_configs": 0,
+    "all_model_excl": {
+      "RF": 0,
+      "XGB": 0,
+      "SVR": 0,
+      "LSTM": 2,
+      "CNN": 0,
+      "Transformer": 29
+    },
+    "selected": false
+  },
+  {
+    "threshold": 3.5,
+    "rmse": 3.46655904229878,
+    "mae": 2.9517094248479396,
+    "r2": 0.9938395258405279,
+    "transformer_excl": 25,
+    "xgb_excl": 0,
+    "zero_model_configs": 0,
+    "all_model_excl": {
+      "RF": 0,
+      "XGB": 0,
+      "SVR": 0,
+      "LSTM": 0,
+      "CNN": 0,
+      "Transformer": 25
+    },
+    "selected": false
+  },
+  {
+    "threshold": 4.0,
+    "rmse": 3.2574346495096833,
+    "mae": 2.726952606927885,
+    "r2": 0.9945603825209366,
+    "transformer_excl": 11,
+    "xgb_excl": 0,
+    "zero_model_configs": 0,
+    "all_model_excl": {
+      "RF": 0,
+      "XGB": 0,
+      "SVR": 0,
+      "LSTM": 0,
+      "CNN": 0,
+      "Transformer": 11
+    },
+    "selected": false
+  }
+]

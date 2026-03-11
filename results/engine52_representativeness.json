@@ -1,0 +1,80 @@
+{
+  "test_engine": 52,
+  "n_fleet_engines": 99,
+  "checks": {
+    "lifecycle_length": {
+      "engine52_cycles": 213,
+      "fleet_mean": 206.24242424242425,
+      "fleet_std": 46.33782208670591,
+      "fleet_min": 128,
+      "fleet_max": 362,
+      "percentile": 66.16161616161617,
+      "z_score": 0.14583283057479873,
+      "verdict": "TYPICAL \u2014 within 0.5\u03c3 of fleet mean"
+    },
+    "degradation_rate": {
+      "sensor_zscores": {
+        "sensor_11": -0.32393753941689674,
+        "sensor_12": 0.6545980377407071,
+        "sensor_4": -0.37038245172658507,
+        "sensor_7": 0.11731966353389608,
+        "sensor_15": -0.25765597332709234
+      },
+      "mean_abs_z": 0.3447787331490354,
+      "verdict": "TYPICAL \u2014 degradation rate within 0.5\u03c3 across all sensors"
+    },
+    "sensor_profile": {
+      "per_sensor": {
+        "sensor_11": {
+          "fleet_mean": 47.54585746262713,
+          "fleet_std": 0.11674524923254082,
+          "e52_mean": 47.63516431924883,
+          "z_score": 0.7649720835090459,
+          "percentile": 71.71717171717172
+        },
+        "sensor_12": {
+          "fleet_mean": 521.4007541512693,
+          "fleet_std": 0.33507138924600255,
+          "e52_mean": 521.123427230047,
+          "z_score": -0.8276651783478207,
+          "percentile": 24.242424242424242
+        },
+        "sensor_4": {
+          "fleet_mean": 1409.0695413506612,
+          "fleet_std": 3.70493241401285,
+          "e52_mean": 1412.036103286385,
+          "z_score": 0.8007060869514266,
+          "percentile": 71.71717171717172
+        },
+        "sensor_7": {
+          "fleet_mean": 553.3521314605556,
+          "fleet_std": 0.38818257769657266,
+          "e52_mean": 553.0507511737089,
+          "z_score": -0.776387978454314,
+          "percentile": 25.252525252525253
+        },
+        "sensor_15": {
+          "fleet_mean": 8.44272397984504,
+          "fleet_std": 0.014221626862077225,
+          "e52_mean": 8.452023474178404,
+          "z_score": 0.6538980637139193,
+          "percentile": 70.70707070707071
+        }
+      },
+      "mean_abs_z": 0.7647258781953052,
+      "verdict": "NEAR-TYPICAL \u2014 sensor means within 1\u03c3 of fleet"
+    },
+    "prediction_difficulty": {
+      "engine52_linear_rmse": 1.646695938374262e-14,
+      "fleet_mean": 2.0197386718659443e-14,
+      "fleet_std": 1.3838692093866029e-14,
+      "percentile": 31.81818181818182,
+      "z_score": -0.26956502172415026,
+      "verdict": "TYPICAL difficulty \u2014 linear RMSE within 0.5\u03c3 of fleet"
+    }
+  },
+  "overall": {
+    "mean_abs_z_all_checks": 0.38122561591082244,
+    "verdict": "REPRESENTATIVE \u2014 Engine #52 is typical across all checks"
+  }
+}

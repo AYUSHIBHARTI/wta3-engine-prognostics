@@ -1,0 +1,132 @@
+{
+  "meta_ensemble": {
+    "rmse": 3.7301695866694553,
+    "mae": 3.191047264725524,
+    "r2": 0.9928669693376724,
+    "nasa_score": 55.254559202803435,
+    "within_10_pct": 100.0,
+    "mae_early": 2.887660590203403,
+    "mae_mid": 4.077906029794221,
+    "mae_late": 2.607575174178947,
+    "nasa_early": 16.964504713279847,
+    "nasa_mid": 25.236662545752793,
+    "nasa_late": 13.053391943770801,
+    "pred_start_cycle": 61,
+    "pred_end_cycle": 213,
+    "n_pred_points": 153
+  },
+  "per_model_mean": {
+    "RF": {
+      "rmse": 7.738457763095259,
+      "mae": 5.551410488413788,
+      "nasa": 109.84239993727347,
+      "r2": 0.967839689440604
+    },
+    "XGB": {
+      "rmse": 11.684345120252786,
+      "mae": 9.75588684599384,
+      "nasa": 923.2639772059357,
+      "r2": 0.897026519599887
+    },
+    "SVR": {
+      "rmse": 6.934787867606988,
+      "mae": 5.245761716632794,
+      "nasa": 99.43059797755805,
+      "r2": 0.9751935939139025
+    },
+    "LSTM": {
+      "rmse": 8.191901421858411,
+      "mae": 6.616279582260481,
+      "nasa": 186.97955833596276,
+      "r2": 0.9638460487723383
+    },
+    "CNN": {
+      "rmse": 10.468727162034073,
+      "mae": 8.459205957419343,
+      "nasa": 291.3307144892702,
+      "r2": 0.9400872812682174
+    },
+    "Transformer": {
+      "rmse": 5.125928905483058,
+      "mae": 3.8468600645934057,
+      "nasa": 117.23176853930099,
+      "r2": 0.9829510863642412
+    }
+  },
+  "uncertainty": {
+    "k_90": 3.0398896412196263,
+    "variance_CI_coverage": 100.0,
+    "n_calibration_cycles": 195900,
+    "calibration_source": "validation_fleet_residuals_only",
+    "note": "Conformal CI dropped. q90=118 cycles was uninformative due to fleet heterogeneity in validation residuals. Variance CI (k90=3.04\u03c3) is the sole reported interval."
+  },
+  "experiment_statistics": {
+    "n_experiments": 100,
+    "rmse_mean": 5.482420269956773,
+    "rmse_std": 1.384950100194643,
+    "best_experiment": "Exp_054",
+    "best_rmse": 2.43639473520707,
+    "optimism_bias": {
+      "top50_rmse": 4.252492542460062,
+      "bot50_rmse": 3.5670371518975426,
+      "all100_rmse": 3.7301695866694553,
+      "gap_cycles": -0.6854553905625194,
+      "gap_pct_of_meta": -18.37598464724334,
+      "verdict": "MODERATE"
+    }
+  },
+  "oracle_gap": {
+    "per_phase": {
+      "early": {
+        "best_model": "Transformer",
+        "oracle_mae": 5.519962897207221,
+        "meta_mae": 2.887660590203403,
+        "gap_cycles": -2.632302307003818,
+        "gap_pct": -91.15691490662351,
+        "all_model_maes": {
+          "RF": 12.2014108184029,
+          "XGB": 7.790461868585324,
+          "SVR": 9.558026248109966,
+          "LSTM": 8.91751006780886,
+          "CNN": 8.194806977814318,
+          "Transformer": 5.519962897207221
+        }
+      },
+      "mid": {
+        "best_model": "Transformer",
+        "oracle_mae": 2.984505637673771,
+        "meta_mae": 4.077906029794221,
+        "gap_cycles": 1.0934003921204498,
+        "gap_pct": 26.812790293150158,
+        "all_model_maes": {
+          "RF": 3.141858768473646,
+          "XGB": 7.234241824430578,
+          "SVR": 3.350299518515909,
+          "LSTM": 6.032649063409544,
+          "CNN": 10.538418401830338,
+          "Transformer": 2.984505637673771
+        }
+      },
+      "late": {
+        "best_model": "RF",
+        "oracle_mae": 1.3109618783648214,
+        "meta_mae": 2.607575174178947,
+        "gap_cycles": 1.2966132958141257,
+        "gap_pct": 49.724867327071145,
+        "all_model_maes": {
+          "RF": 1.3109618783648214,
+          "XGB": 14.242956844965617,
+          "SVR": 2.8289593832725064,
+          "LSTM": 4.898679615563037,
+          "CNN": 6.644392492613372,
+          "Transformer": 3.036111658899224
+        }
+      }
+    },
+    "oracle_combined_mae": 3.2718101377486044,
+    "meta_combined_mae": 3.191047264725524,
+    "total_gap_cycles": -0.0807628730230805,
+    "total_gap_pct": -2.5309206139266403,
+    "note": "Oracle = best single model per phase averaged across 100 experiments. Post-hoc only \u2014 phase labels unavailable at inference time."
+  }
+}
