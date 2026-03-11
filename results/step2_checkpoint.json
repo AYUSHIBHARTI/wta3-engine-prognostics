@@ -1,0 +1,33 @@
+{
+  "top_sensors": [
+    "sensor_11",
+    "sensor_12",
+    "sensor_4",
+    "sensor_7",
+    "sensor_15"
+  ],
+  "n_features": 22,
+  "input_shape": [
+    50,
+    22
+  ],
+  "leakage_ok": true,
+  "X_train_flat": [
+    17906,
+    22
+  ],
+  "X_val_flat": [
+    2512,
+    22
+  ],
+  "X_train_seq": [
+    13643,
+    50,
+    22
+  ],
+  "X_val_seq": [
+    1924,
+    50,
+    22
+  ]
+}
