@@ -1,9 +1,9 @@
 {
-  "ensemble_rmse_mean": 5.482420269956773,
-  "ensemble_rmse_std": 1.384950100194643,
-  "ensemble_rmse_median": 5.535113820271094,
-  "ensemble_rmse_min": 2.43639473520707,
-  "ensemble_rmse_max": 9.204485290504413,
-  "best_experiment": "Exp_054",
-  "best_rmse": 2.43639473520707
+  "ensemble_rmse_mean": 5.012740187483371,
+  "ensemble_rmse_std": 1.2765953232466822,
+  "ensemble_rmse_median": 4.939551685744082,
+  "ensemble_rmse_min": 2.5221669578109394,
+  "ensemble_rmse_max": 9.5423367013453024,
+  "best_experiment": "Exp_055",
+  "best_rmse": 2.5221669578109394
 }
