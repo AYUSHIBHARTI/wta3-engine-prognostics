@@ -62,10 +62,10 @@
   },
   "experiment_statistics": {
     "n_experiments": 100,
-    "rmse_mean": 5.482420269956773,
-    "rmse_std": 1.384950100194643,
-    "best_experiment": "Exp_054",
-    "best_rmse": 2.43639473520707,
+    "rmse_mean": 5.012740187483371,
+    "rmse_std": 1.2765953232466822,
+    "best_experiment": "Exp_055",
+    "best_rmse": 2.5221669578109394,
     "optimism_bias": {
       "top50_rmse": 4.252492542460062,
       "bot50_rmse": 3.5670371518975426,

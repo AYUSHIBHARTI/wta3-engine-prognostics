@@ -1,0 +1,55 @@
+{
+  "selected": [
+    "val_rmse",
+    "mean_abs_diff",
+    "slope",
+    "slope_dev",
+    "max_jump",
+    "slope_consistency",
+    "val_rmse_zscore",
+    "final_pred",
+    "mean_abs_div",
+    "late_div",
+    "gap_ratio",
+    "max_abs_div"
+  ],
+  "all_features": [
+    "val_rmse_zscore",
+    "gap_ratio",
+    "gap_zscore",
+    "mono_violations",
+    "mono_rate",
+    "max_jump",
+    "mean_abs_diff",
+    "mean_rolling_var",
+    "mean_ma_dev",
+    "slope",
+    "slope_dev",
+    "slope_consistency",
+    "final_pred",
+    "mean_corr_with_others",
+    "min_corr_with_others",
+    "rank_in_experiment",
+    "mean_abs_div",
+    "max_abs_div",
+    "div_growth_ratio",
+    "div_sign_cons",
+    "early_div",
+    "late_div",
+    "val_rmse"
+  ],
+  "top5_type1": [
+    "mean_abs_div",
+    "mean_ma_dev",
+    "slope",
+    "slope_dev",
+    "mean_rolling_var"
+  ],
+  "top5_type2": [
+    "val_rmse",
+    "mono_rate",
+    "mono_violations",
+    "max_jump",
+    "mean_abs_diff"
+  ]
+}
