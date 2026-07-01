@@ -2,7 +2,7 @@
 
 **Robust Ensemble-Based Framework for Extrapolation and Uncertainty Quantification using Limited Time Series Data**
 
-A Winner-Takes-All³ (WTA³) ensemble framework for Remaining Useful Life (RUL) prediction with calibrated uncertainty quantification, applied to NASA C-MAPSS turbofan engine degradation data.
+A Weighted Triple Aggregation (WTA³) ensemble framework for Remaining Useful Life (RUL) prediction with calibrated uncertainty quantification, applied to NASA C-MAPSS turbofan engine degradation data.
 
 ---
 
@@ -23,7 +23,7 @@ This framework addresses a core challenge in prognostics: making reliable RUL pr
 
 ---
 
-## Framework: WTA³
+## Framework: WTA³ (Weighted Triple Aggregation)
 
 **Six base models:**
 - Random Forest (RF)
