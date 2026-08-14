@@ -1,4 +1,11 @@
-streamlit
-plotly
-pandas
-numpy
+numpy==2.2.6
+pandas==2.3.3
+scipy==1.15.3
+scikit-learn==1.7.2
+xgboost==3.2.0
+tensorflow==2.20.0
+keras==3.12.1
+matplotlib==3.10.8
+seaborn==0.13.2
+streamlit==1.47.0
+plotly==6.6.0

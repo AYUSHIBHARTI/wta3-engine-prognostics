@@ -51,7 +51,7 @@ exclude if |val_RMSE(i) − median| > 2.5 × MAD
 
 ## Dataset
 
-[NASA C-MAPSS](https://www.nasa.gov/intelligent-systems-division/) FD001–FD004 turbofan engine degradation dataset.
+[NASA C-MAPSS](https://www.nasa.gov/intelligent-systems-division/) turbofan engine degradation dataset.
 
 | Dataset | Conditions | Fault Modes | Test Engine | RMSE |
 |---|---|---|---|---|
@@ -59,6 +59,8 @@ exclude if |val_RMSE(i) − median| > 2.5 × MAD
 | FD002 | 6 | 1 | #154 | 5.50 |
 | FD003 | 1 | 2 | #52 | 14.51 |
 | FD004 | 6 | 2 | #143 | 11.31 |
+
+> **Reproducibility scope:** this repository contains the data, pipeline, and results for **FD001 only**. The FD002–FD004 rows are reported from separate experiment runs (same WTA³ methodology) that are not included in this codebase.
 
 ---
 
@@ -130,7 +132,7 @@ Features: cycle slider, RUL countdown, health status (green/yellow/red), 90% CI 
 pip install -r requirements.txt
 ```
 
-Main dependencies: `scikit-learn`, `xgboost`, `torch`, `streamlit`, `matplotlib`, `numpy`, `pandas`
+Main dependencies: `scikit-learn`, `xgboost`, `tensorflow`/`keras`, `streamlit`, `plotly`, `matplotlib`, `seaborn`, `scipy`, `numpy`, `pandas`
 
 ---
 
@@ -172,4 +174,4 @@ Uncertainty Quantification using Limited Time Series Data for Prognostics.
 
 ## License
 
-For academic and research use only. Dataset sourced from NASA Prognostics Center of Excellence.
+[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) — free to use, share, and adapt for academic and research purposes with attribution; no commercial use. See [LICENSE](LICENSE). Dataset sourced from NASA Prognostics Center of Excellence.

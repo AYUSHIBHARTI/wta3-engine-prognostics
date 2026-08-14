@@ -498,7 +498,7 @@ for xv, lbl in [(111, 'Early|Mid'), (162, 'Mid|Late')]:
 ax.axvspan(1, CALIBRATION_CYCLES, alpha=0.08, color='#3498db',
            label=f'Calibration (cycles 1–{CALIBRATION_CYCLES})', zorder=0)
 ax.axvline(CALIBRATION_CYCLES, color='#f39c12', ls='--', lw=2.5, alpha=0.9,
-           zorder=8, label='Prediction Start (cycle 60)')
+           zorder=8, label='Calibration Boundary (cycle 60) — Predictions Begin Cycle 61')
 
 ax.set_xlabel('Cycle', fontsize=14, fontweight='bold')
 ax.set_ylabel('RUL (cycles)', fontsize=14, fontweight='bold')
@@ -620,6 +620,13 @@ print("Generating Figure 5...")
 weights_per_model  = {m: [e['weights'][m]  for e in train_summary] for m in MODEL_NAMES}
 outliers_per_model = {m: [e['outliers'][m] for e in train_summary] for m in MODEL_NAMES}
 outlier_counts     = {m: sum(outliers_per_model[m]) for m in MODEL_NAMES}
+# Inlier-basis mean for the Transformer only, since its all-100 mean (0.327)
+# is diluted by the 47 zero-weight excluded runs and understates its weight
+# whenever it actually participates (0.617). The other five models are
+# reported on the all-100 basis throughout the paper; for RF, SVR and CNN
+# (never excluded) the two bases coincide exactly.
+transformer_inlier_mean = float(np.mean(
+    [w for w, out in zip(weights_per_model['Transformer'], outliers_per_model['Transformer']) if not out]))
 
 fig, axes = plt.subplots(2, 3, figsize=(18, 10))
 axes = axes.flatten()
@@ -627,15 +634,25 @@ axes = axes.flatten()
 for idx, m in enumerate(MODEL_NAMES):
     ax = axes[idx]
     w  = weights_per_model[m]
+    all100_mean = np.mean(w)
     ax.hist(w, bins=20, color=colors6[idx], edgecolor='black', alpha=0.8, lw=1)
-    ax.axvline(np.mean(w), color='black', lw=2, ls='--',
-               label=f'Mean={np.mean(w):.3f}')
     ax.axvline(1/6, color='gray', lw=1.5, ls=':',
                label='Equal weight (1/6)')
     out_note = (f"\n[{outlier_counts[m]} configs: weight=0 (MAD excluded)]"
                 if outlier_counts[m] > 0 else "")
-    ax.set_title(f'{m}\nMean={np.mean(w):.3f}  Outliers={outlier_counts[m]}/100'
-                 + out_note, fontsize=10, fontweight='bold')
+    if m == 'Transformer':
+        # Headline statistic is the inlier-basis mean (0.617): the mean
+        # weight it receives in the 53 configurations where it is retained.
+        ax.axvline(transformer_inlier_mean, color='black', lw=2, ls='--',
+                   label=f'Inlier mean={transformer_inlier_mean:.3f}')
+        ax.set_title(f'{m}\nInlier mean={transformer_inlier_mean:.3f}  (all-100 mean={all100_mean:.3f})  '
+                     f'Outliers={outlier_counts[m]}/100' + out_note,
+                     fontsize=10, fontweight='bold')
+    else:
+        ax.axvline(all100_mean, color='black', lw=2, ls='--',
+                   label=f'Mean={all100_mean:.3f}')
+        ax.set_title(f'{m}\nMean={all100_mean:.3f}  Outliers={outlier_counts[m]}/100'
+                     + out_note, fontsize=10, fontweight='bold')
     ax.set_xlabel('WTA³ Weight', fontsize=10)
     ax.set_ylabel('Count', fontsize=10)
     ax.legend(fontsize=8)
@@ -666,7 +683,7 @@ ax.plot(full_cycles, full_true_rul, 'k-', lw=3, label='True RUL', zorder=10)
 ax.plot(pred_cycles, meta_pred, color='#c0392b', lw=2.5,
         label='Meta-Ensemble', zorder=9)
 ax.axvline(CALIBRATION_CYCLES, color='#f39c12', ls='--', lw=2.5,
-           label='Prediction Start (cycle 60)')
+           label='Calibration Boundary (cycle 60) — Predictions Begin Cycle 61')
 for xv, lbl in [(111, 'Early|Mid'), (162, 'Mid|Late')]:
     ax.axvline(xv, color='gray', ls=':', lw=1.5)
     ax.text(xv+1, full_true_rul.max()*0.92, lbl, fontsize=9, color='gray')
